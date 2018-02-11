@@ -79,6 +79,7 @@ ul {
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 20%;
 }
 
 .testimonial-company--employer {
@@ -90,6 +91,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 80%;
 }
 
 .testimonial-endorser--highlight {
