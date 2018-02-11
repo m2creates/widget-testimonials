@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Testimonials</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="testimonial.css">
+</head>
+
+<body>
+  <div id="app">
+    <button class="nav-button display-left" onclick="plusLis(-1)">&#10094;</button>
+    <ul>
+      <li class="testimonial">
+        <h1>Endorsements</h1>
+      </li>
+      <li class="testimonial" v-for="item in items" style="display: none;">
+        <div class="testimonial-company">
+          <img class="testimonial-company--logo" :src="item['fields']['Logo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Logo']" width="150">
+          <p><span class="testimonial-company--employer">{{ item['fields']['EmployerName'] }}</span></p>
+        </div>
+        <div class="testimonial-endorser">
+          <div>
+            <p class="testimonial-endorser--highlight">{{ item['fields']['Highlight'] }}</p>
+          </div>
+          <div class="testimonial-endorser--credit">
+            <p><span class="testimonial-endorser--name">{{ item['fields']['Name'] }}</span>, <span class="testimonial-endorser--title">{{ item['fields']['Title'] }}</span></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-button display-right" onclick="plusLis(1)">&#10095;</button>
+  </div><!--app-->
+
+  <!-- Include Dependency Scripts -->
+  <script type="text/javascript" src="https://unpkg.com/vue"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+  <script type="text/javascript" src="testimonial.js"></script>
+
+  <!-- Create Testimonials -->
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        items: [],
+      },
+      mounted: function() {
+        this.loadItems();
+      },
+      methods: {
+        loadItems: function() {
+
+          // Init variables
+          var self = this
+          var app_id = "appqL9WnlI5wq6vXj";
+          var app_key = "keyIFpD678kZZRRG6";
+          this.items = []
+          axios.get(
+            "https://api.airtable.com/v0/" + app_id + "/Endorsements?view=Grid%20view", {
+              headers: {
+                Authorization: "Bearer " + app_key
+              }
+            }
+          ).then(function(response) {
+            self.items = response.data.records
+          }).catch(function(error) {
+            console.log(error)
+          })
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

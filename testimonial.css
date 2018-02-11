@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  padding-top: 1em;
+}
+
+img {
+  border: 2px solid #000;
+}
+
+#app {
+  position: relative; /* or absolute */
+  width: 100%;
+  height: 500px;
+  background-color: #e3e3e3;
+  transform: translate(0, 25%);
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+}
+
+.testimonial {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  margin: auto;
+}
+
+.testimonial h1 {
+  margin: 100px 0;
+}
+
+.nav-button {
+  color: #fff;
+  background-color: #a9a9a9;
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 2em;
+}
+
+.display-left, .display-right {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%,-50%);
+}
+
+.display-left {
+  left: 0%;
+}
+
+.display-right {
+  right: 0%;
+}
+
+.testimonial-company {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonial-company--employer {
+  font-style: italic;
+}
+
+.testimonial-endorser {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testimonial-endorser--highlight {
+  font-size: 2em;
+  font-style: italic;
+  padding: 0;
+}
+
+.testimonial-endorser--highlight::before {
+  content: '“';
+}
+
+.testimonial-endorser--highlight::after {
+  content: '”';
+}
+
+.testimonial-endorser--name::before {
+  content: '– ';
+}
