@@ -9,7 +9,7 @@ function showLis(n) {
     var i;
     var x = document.getElementsByClassName("testimonial");
     if (n > x.length) {slideIndex = 0}
-    if (n < 0) {slideIndex = x.length} ;
+    if (n < 0) {slideIndex = x.length}
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }
