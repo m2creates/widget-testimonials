@@ -1,5 +1,7 @@
 # Using Airtable w/ Vue.js
 
+[![CodeFactor](https://www.codefactor.io/repository/github/archgirl/widget-testimonials/badge)](https://www.codefactor.io/repository/github/archgirl/widget-testimonials)
+
 This widget/module/whatever-you-want-to-call-it displays Airtable records as list items in a simple Vue app.
 
 This project was created for [@emorgaine](https://twitter.com/emorgaine)'s Adobe Premiere "tutorial" assignment. She needed something cool to work with for video editing, and I needed to figure out how to build an easily editable testimonial slider. Hooray #teamwork!
